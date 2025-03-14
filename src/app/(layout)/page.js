@@ -1,3 +1,4 @@
+import Discover from '@/components/Discover'
 import Hero from '@/components/Hero'
 import Point from '@/components/Point'
 import React from 'react'
@@ -7,6 +8,7 @@ const Home = () => {
     <div>
       <Hero />
       <Point />
+      <Discover />
     </div>
   )
 }

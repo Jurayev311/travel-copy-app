@@ -1,12 +1,42 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import CountUp from "react-countup";
 import travel1 from "../../public/assets/travel1.png";
 import travel2 from "../../public/assets/travel2.png";
 import travel3 from "../../public/assets/travel3.png";
 
 const Point = () => {
+  const [inView, setInView] = useState(false);
+  const sectionRef = useRef(null);
+
+  //sahifa 30% ko'ringanda countUp ishlashi uchun yozilgan kod
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className="mt-[99px] flex flex-wrap items-center justify-center p-10">
+    <section
+      ref={sectionRef}
+      className="mt-[99px] flex flex-wrap items-center justify-center p-10 text-[#3D3E48]"
+    >
       <div className="container mx-auto flex items-center justify-center flex-wrap gap-[30px] max-w-6xl">
         <div className="relative flex items-center justify-center w-[350px] h-[448px]">
           <div className="absolute top-0 left-[-195px] w-[250px] h-[448px] rounded-[95px] overflow-hidden shadow-md transition-transform duration-300 ease-in-out group">
@@ -34,9 +64,8 @@ const Point = () => {
           </div>
         </div>
 
-
         <div className="max-w-md">
-          <h3 className="text-green-700 font-semibold">Travelers Point</h3>
+          <h3 className="text-[#295943] font-semibold">Travelers Point</h3>
           <h2 className="text-3xl font-bold my-3">
             We help to find your dream place
           </h2>
@@ -47,19 +76,27 @@ const Point = () => {
           </p>
           <div className="grid grid-cols-2 gap-x-10 gap-y-6 text-left">
             <div>
-              <h4 className="text-2xl font-bold">100+</h4>
+              <h2 className="text-[#295943] text-2xl font-bold">
+                {inView && <CountUp start={0} end={100} duration={3} />}+
+              </h2>
               <p className="text-gray-500">Holiday Package</p>
             </div>
             <div>
-              <h4 className="text-2xl font-bold">172</h4>
+              <h4 className="text-[#295943] text-2xl font-bold">
+                {inView && <CountUp start={0} end={172} duration={3} />}
+              </h4>
               <p className="text-gray-500">Hotels</p>
             </div>
             <div>
-              <h4 className="text-2xl font-bold">68</h4>
+              <h4 className="text-[#295943] text-2xl font-bold">
+                {inView && <CountUp start={0} end={68} duration={3} />}
+              </h4>
               <p className="text-gray-500">Elite Transportation</p>
             </div>
             <div>
-              <h4 className="text-2xl font-bold">32M+</h4>
+              <h4 className="text-[#295943] text-2xl font-bold">
+                {inView && <CountUp start={0} end={32} duration={3} />}M+
+              </h4>
               <p className="text-gray-500">we help to find your dream place</p>
             </div>
           </div>

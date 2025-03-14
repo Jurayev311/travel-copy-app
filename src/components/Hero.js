@@ -7,7 +7,7 @@ import { Button } from 'antd';
 
 const Hero = () => {
     return (
-        <div className="relative w-full h-[780px]">
+        <section className="relative w-full h-[780px]">
             <Image
                 src={hero}
                 alt="Travel image"
@@ -47,7 +47,7 @@ const Hero = () => {
                     </Button>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 
