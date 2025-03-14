@@ -25,9 +25,9 @@ const Header = () => {
       }`}>
       <div className='container mx-auto'>
         <nav className='flex items-center justify-between h-[60px]'>
-          <div>
+          <Link href={'/'}>
             <Image src={logo} alt='Logo' width={148} height={60} />
-          </div>
+          </Link>
 
 
           <ul className='flex items-center gap-10 text-[16px] font-bold'>
