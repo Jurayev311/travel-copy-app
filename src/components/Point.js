@@ -10,7 +10,7 @@ const Point = () => {
   const [inView, setInView] = useState(false);
   const sectionRef = useRef(null);
 
-  //sahifa 30% ko'ringanda countUp ishlashi uchun yozilgan kod
+  //sahifa 40% ko'ringanda countUp ishlashi uchun yozilgan kod
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {

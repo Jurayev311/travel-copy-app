@@ -34,8 +34,8 @@ const Header = () => {
             {
               LINKS?.map((item) => (
                 <li key={item.path}>
-                  <Link href={item.path}><span className={`transition-all duration-300 
-                      ${pathname === item.path ? "text-white font-extrabold glow" : "text-gray-100"}`}>
+                  <Link href={item.path}><span className={`transition-all duration-300
+                      ${pathname === item.path ? "text-white font-extrabold glow " : "text-gray-100"}`}>
                     {item.name}
                   </span></Link>
                 </li>
