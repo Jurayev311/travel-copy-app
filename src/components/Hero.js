@@ -3,6 +3,7 @@ import hero from '../../public/assets/hero.svg'
 import React from 'react'
 import { LuSearch } from "react-icons/lu";
 import { IoLocation } from "react-icons/io5";
+import { Button } from 'antd';
 
 const Hero = () => {
     return (
@@ -36,10 +37,14 @@ const Hero = () => {
                         placeholder="Person"
                         className="flex-1 p-2 outline-none text-gray-700 border-l"
                     />
-                    <button className="cursor-pointer bg-green-500 text-white px-4 py-2 rounded-lg flex items-center gap-2">
+                    <Button
+                        type='primary'
+                        size='large'
+                        style={{ background: "#43B97F" }}
+                        className="cursor-pointer text-white py-2 rounded-lg flex items-center gap-2">
                         Find Trip Now
                         <LuSearch className='text-2xl' />
-                    </button>
+                    </Button>
                 </div>
             </div>
         </div>

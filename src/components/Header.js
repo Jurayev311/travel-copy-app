@@ -6,8 +6,11 @@ import lang from '../../public/assets/lang.svg'
 import { LINKS } from '../../public/static'
 import Link from 'next/link'
 import { FaChevronDown } from "react-icons/fa6";
+import { usePathname } from 'next/navigation'
 
 const Header = () => {
+
+  const pathname = usePathname()
 
   const [scroll, setScroll] = useState(false)
 
@@ -18,11 +21,11 @@ const Header = () => {
   }
 
   return (
-    <header className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 ${scroll ? "bg-white/50 backdrop-blur-md text-black shadow-md" : "bg-transparent text-white"
+    <header className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 ${scroll ? "bg-white/50 backdrop-blur-xl text-white" : "bg-transparent text-white"
       }`}>
       <div className='container mx-auto'>
         <nav className='flex items-center justify-between h-[60px]'>
-          <div className={`${scroll ? "invert" : ""}`}>
+          <div>
             <Image src={logo} alt='Logo' width={148} height={60} />
           </div>
 
@@ -31,7 +34,10 @@ const Header = () => {
             {
               LINKS?.map((item) => (
                 <li key={item.path}>
-                  <Link href={item.path}><span>{item.name}</span></Link>
+                  <Link href={item.path}><span className={`transition-all duration-300 
+                      ${pathname === item.path ? "text-white font-extrabold glow" : "text-gray-100"}`}>
+                    {item.name}
+                  </span></Link>
                 </li>
               ))
             }
