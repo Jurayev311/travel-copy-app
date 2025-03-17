@@ -1,7 +1,16 @@
 import Image from 'next/image'
 import React from 'react'
-import discover from '../../public/assets/discover1.svg'
 import { IoNavigate } from "react-icons/io5";
+
+// Rasm va ma'lumotlar massivi
+const destinations = [
+    { img: '/assets/discover1.svg', title: 'Taman Nasional Komodo', price: 'Rp. 7,5jt', days: '7 days for trips' },
+    { img: '/assets/discover2.svg', title: 'Bali Island', price: 'Rp. 6,2jt', days: '5 days for trips' },
+    { img: '/assets/discover3.svg', title: 'Raja Ampat', price: 'Rp. 8,1jt', days: '10 days for trips' },
+    { img: '/assets/discover4.svg', title: 'Mount Bromo', price: 'Rp. 5,5jt', days: '3 days for trips' },
+    { img: '/assets/discover5.svg', title: 'Labuan Bajo', price: 'Rp. 9jt', days: '6 days for trips' },
+    { img: '/assets/discover6.svg', title: 'Yogyakarta', price: 'Rp. 4,7jt', days: '4 days for trips' },
+];
 
 const Discover = () => {
     return (
@@ -13,70 +22,29 @@ const Discover = () => {
                 </div>
 
                 <div className='grid grid-cols-3 gap-5'>
-                <div className='p-1.5 rounded-2xl shadow-lg'>
-                    <div className='flex items-center justify-center'>
-                        <Image alt='travel image' src={discover} width={360} height={227}/>
-                    </div>
-                    <h2 className='mt-5 font-bold text-[19.2px] text-[#3D3E48]'>Taman Nasional Komodo</h2>
-                    <div className='flex items-center justify-between mt-[22px] mb-5'>
-                        <h3 className='text-[16px] font-bold text-[#295943]'>Rp. 7,5jt</h3>
-                        <p><IoNavigate className='inline-block mr-1 text-[14px] font-normal' /> 7 days for trips</p>
-                    </div>
-                </div>
-                <div className='p-1.5 rounded-2xl shadow-lg'>
-                    <div className='flex items-center justify-center'>
-                        <Image alt='travel image' src={discover} width={360} height={227}/>
-                    </div>
-                    <h2 className='mt-5 font-bold text-[19.2px] text-[#3D3E48]'>Taman Nasional Komodo</h2>
-                    <div className='flex items-center justify-between mt-[22px] mb-5'>
-                        <h3 className='text-[16px] font-bold text-[#295943]'>Rp. 7,5jt</h3>
-                        <p><IoNavigate className='inline-block mr-1 text-[14px] font-normal' /> 7 days for trips</p>
-                    </div>
-                </div>
-                <div className='p-1.5 rounded-2xl shadow-lg'>
-                    <div className='flex items-center justify-center'>
-                        <Image alt='travel image' src={discover} width={360} height={227}/>
-                    </div>
-                    <h2 className='mt-5 font-bold text-[19.2px] text-[#3D3E48]'>Taman Nasional Komodo</h2>
-                    <div className='flex items-center justify-between mt-[22px] mb-5'>
-                        <h3 className='text-[16px] font-bold text-[#295943]'>Rp. 7,5jt</h3>
-                        <p><IoNavigate className='inline-block mr-1 text-[14px] font-normal' /> 7 days for trips</p>
-                    </div>
-                </div>
-                <div className='p-1.5 rounded-2xl shadow-lg'>
-                    <div className='flex items-center justify-center'>
-                        <Image alt='travel image' src={discover} width={360} height={227}/>
-                    </div>
-                    <h2 className='mt-5 font-bold text-[19.2px] text-[#3D3E48]'>Taman Nasional Komodo</h2>
-                    <div className='flex items-center justify-between mt-[22px] mb-5'>
-                        <h3 className='text-[16px] font-bold text-[#295943]'>Rp. 7,5jt</h3>
-                        <p><IoNavigate className='inline-block mr-1 text-[14px] font-normal' /> 7 days for trips</p>
-                    </div>
-                </div>
-                <div className='p-1.5 rounded-2xl shadow-lg'>
-                    <div className='flex items-center justify-center'>
-                        <Image alt='travel image' src={discover} width={360} height={227}/>
-                    </div>
-                    <h2 className='mt-5 font-bold text-[19.2px] text-[#3D3E48]'>Taman Nasional Komodo</h2>
-                    <div className='flex items-center justify-between mt-[22px] mb-5'>
-                        <h3 className='text-[16px] font-bold text-[#295943]'>Rp. 7,5jt</h3>
-                        <p><IoNavigate className='inline-block mr-1 text-[14px] font-normal' /> 7 days for trips</p>
-                    </div>
-                </div>
-                <div className='p-1.5 rounded-2xl shadow-lg'>
-                    <div className='flex items-center justify-center'>
-                        <Image alt='travel image' src={discover} width={360} height={227}/>
-                    </div>
-                    <h2 className='mt-5 font-bold text-[19.2px] text-[#3D3E48]'>Taman Nasional Komodo</h2>
-                    <div className='flex items-center justify-between mt-[22px] mb-5'>
-                        <h3 className='text-[16px] font-bold text-[#295943]'>Rp. 7,5jt</h3>
-                        <p><IoNavigate className='inline-block mr-1 text-[14px] font-normal' /> 7 days for trips</p>
-                    </div>
-                </div>
+                    {destinations.map((item, index) => (
+                        <div 
+                            key={index} 
+                            className='p-1.5 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300'
+                        >
+                            <div className='flex items-center justify-center'>
+                                <Image alt={item.title} src={item.img} width={360} height={227} />
+                            </div>
+                            <h2 className='mt-5 font-bold text-[19.2px] text-[#3D3E48] hover:text-[#1e8449] transition-colors duration-300'>
+                                {item.title}
+                            </h2>
+                            <div className='flex items-center justify-between mt-[22px] mb-5'>
+                                <h3 className='text-[16px] font-bold text-[#295943] hover:text-[#1e8449] transition-colors duration-300'>
+                                    {item.price}
+                                </h3>
+                                <p><IoNavigate className='inline-block mr-1 text-[14px] font-normal' /> {item.days}</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
     )
 }
 
-export default Discover
+export default Discover;
