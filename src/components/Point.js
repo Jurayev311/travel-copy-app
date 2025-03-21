@@ -10,7 +10,6 @@ const Point = () => {
   const [inView, setInView] = useState(false);
   const sectionRef = useRef(null);
 
-  //sahifa 40% ko'ringanda countUp ishlashi uchun yozilgan kod
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -38,7 +37,7 @@ const Point = () => {
       className="mt-[99px] flex flex-wrap items-center justify-center p-10 text-[#3D3E48]"
     >
       <div className="container mx-auto flex items-center justify-center flex-wrap gap-[30px] max-w-6xl">
-        <div className="relative flex items-center justify-center w-[350px] h-[448px]">
+        <div className="relative flex items-center justify-center w-[350px] h-[448px] hidden md:flex">
           <div className="absolute top-0 left-[-195px] w-[250px] h-[448px] rounded-[95px] overflow-hidden shadow-md transition-transform duration-300 ease-in-out group">
             <Image
               src={travel1}
@@ -64,7 +63,7 @@ const Point = () => {
           </div>
         </div>
 
-        <div className="max-w-md">
+        <div className="max-w-md text-center md:text-left">
           <h3 className="text-[#295943] font-semibold">Travelers Point</h3>
           <h2 className="text-3xl font-bold my-3">
             We help to find your dream place

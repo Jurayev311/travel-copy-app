@@ -71,7 +71,7 @@ const Header = () => {
           </button>
 
           {mobileMenuOpen && (
-            <div className='absolute top-[60px] left-0 w-full bg-slate-400/90 text-white flex flex-col items-center gap-4 py-4 text-[16px] font-bold md:hidden'>
+            <div className='absolute top-[60px] left-0 w-full bg-slate-400/80 text-white flex flex-col items-center gap-4 py-4 text-[16px] font-bold md:hidden'>
               <ul className='w-full flex flex-col items-center gap-4'>
                 {LINKS?.map((item) => (
                   <li key={item.path}>

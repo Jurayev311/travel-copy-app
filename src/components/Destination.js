@@ -13,30 +13,40 @@ const destinations = [
 
 const Destination = () => {
     return (
-        <section className='mt-[90px] mb-[99px]'>
+        <section className='mt-[90px] mb-[99px] px-4'>
             <div className='container mx-auto'>
                 <div className='text-center'>
                     <h2 className='mb-2 text-[16px] font-bold text-[#295943]'>Top Destination</h2>
                     <p className='mb-[50px] text-[27.65px] font-bold text-[#3D3E48]'>Discover your love</p>
                 </div>
 
-                <div className='grid grid-cols-3 gap-5'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                     {destinations.map((item, index) => (
                         <div 
                             key={index} 
-                            className='p-1.5 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300'
+                            className='p-2 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 bg-white'
                         >
-                            <div className='flex items-center justify-center'>
-                                <Image alt={item.title} src={item.img} width={360} height={227} />
+                            <div className='w-full overflow-hidden rounded-2xl'>
+                                <Image 
+                                    alt={item.title} 
+                                    src={item.img} 
+                                    width={360} 
+                                    height={227} 
+                                    className="w-full h-auto object-cover rounded-2xl"
+                                />
                             </div>
+
                             <h2 className='mt-5 font-bold text-[19.2px] text-[#3D3E48] hover:text-[#1e8449] transition-colors duration-300'>
                                 {item.title}
                             </h2>
+
                             <div className='flex items-center justify-between mt-[22px] mb-5'>
                                 <h3 className='text-[16px] font-bold text-[#295943] hover:text-[#1e8449] transition-colors duration-300'>
                                     {item.price}
                                 </h3>
-                                <p><IoNavigate className='inline-block mr-1 text-[14px] font-normal' /> {item.days}</p>
+                                <p className="flex items-center text-gray-600">
+                                    <IoNavigate className='mr-1 text-[14px]' /> {item.days}
+                                </p>
                             </div>
                         </div>
                     ))}
