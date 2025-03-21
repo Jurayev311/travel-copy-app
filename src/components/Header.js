@@ -40,7 +40,6 @@ const Header = () => {
             />
           </Link>
 
-          {/* Desktop Menu */}
           <ul className='hidden md:flex items-center gap-10 text-[16px] font-bold'>
             {LINKS?.map((item) => (
               <li key={item.path}>
@@ -54,7 +53,6 @@ const Header = () => {
             ))}
           </ul>
 
-          {/* Language Selector (Desktop) */}
           <div className="hidden md:flex items-center gap-2">
             <Image src={lang} alt="Language" className="w-5 h-5 rounded-full object-cover" />
             <select className="bg-transparent appearance-none outline-none text-[16px] font-bold">
@@ -65,7 +63,6 @@ const Header = () => {
             <FaChevronDown className='text-[15px]' />
           </div>
 
-          {/* Mobile Menu Toggle */}
           <button
             className="md:hidden text-[24px]"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -73,7 +70,6 @@ const Header = () => {
             {mobileMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
 
-          {/* Mobile Menu */}
           {mobileMenuOpen && (
             <div className='absolute top-[60px] left-0 w-full bg-slate-400/90 text-white flex flex-col items-center gap-4 py-4 text-[16px] font-bold md:hidden'>
               <ul className='w-full flex flex-col items-center gap-4'>
@@ -88,7 +84,6 @@ const Header = () => {
                   </li>
                 ))}
               </ul>
-              {/* Language Selector (Mobile) */}
               <div className="flex items-center gap-2">
                 <Image src={lang} alt="Language" className="w-5 h-5 rounded-full object-cover" />
                 <select className="bg-transparent appearance-none outline-none text-[16px] font-bold">
