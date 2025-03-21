@@ -2,7 +2,6 @@ import Image from 'next/image'
 import React from 'react'
 import { IoNavigate } from "react-icons/io5";
 
-// Rasm va ma'lumotlar massivi
 const destinations = [
     { img: '/assets/discover1.svg', title: 'Taman Nasional Komodo', price: 'Rp. 7,5jt', days: '7 days for trips' },
     { img: '/assets/discover2.svg', title: 'Bali Island', price: 'Rp. 6,2jt', days: '5 days for trips' },
@@ -12,7 +11,7 @@ const destinations = [
     { img: '/assets/discover6.svg', title: 'Yogyakarta', price: 'Rp. 4,7jt', days: '4 days for trips' },
 ];
 
-const Discover = () => {
+const Destination = () => {
     return (
         <section className='mt-[90px] mb-[99px]'>
             <div className='container mx-auto'>
@@ -47,4 +46,4 @@ const Discover = () => {
     )
 }
 
-export default Discover;
+export default Destination;

@@ -1,7 +1,6 @@
-import Discover from '@/components/Discover'
-import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import Point from '@/components/Point'
+import Destination from '@/components/Destination'
 import Testimonial from '@/components/Testimonial'
 import React from 'react'
 
@@ -10,9 +9,8 @@ const Home = () => {
     <div>
       <Hero />
       <Point />
-      <Discover />
+      <Destination />
       <Testimonial />
-      <Footer />
     </div>
   )
 }
