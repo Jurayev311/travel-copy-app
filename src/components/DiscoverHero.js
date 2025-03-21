@@ -2,11 +2,11 @@ import React from 'react'
 import heroImage from '../../public/assets/banner-dsco.svg'
 import Image from 'next/image'
 
-const DiscoverPage = () => {
+const DiscoverHero = () => {
     return (
         <>
             <section className="w-full overflow-x-hidden">
-                <div className="w-full h-[250px] md:h-[320px] relative">
+                <div className="w-full h-[250px] md:h-[300px] relative">
                     <Image
                         alt="travel image"
                         src={heroImage}
@@ -14,7 +14,7 @@ const DiscoverPage = () => {
                     />
                     <div className='absolute bottom-8 left-8 w-full'>
                         <div className="max-w-screen-xl mx-auto px-4">
-                            <h2 className="text-white text-4xl md:text-6xl font-bold">Discover</h2>
+                            <h2 className="text-white text-4xl md:text-4xl font-bold">Discover</h2>
                         </div>
                     </div>
                 </div>
@@ -53,4 +53,4 @@ const DiscoverPage = () => {
     )
 }
 
-export default DiscoverPage
+export default DiscoverHero

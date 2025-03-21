@@ -1,10 +1,12 @@
-import DiscoverPage from '@/components/DiscoverPage'
+import DiscoverHero from '@/components/DiscoverHero'
+import DiscoverInfo from '@/components/DiscoverInfo'
 import React from 'react'
 
 const Discover = () => {
   return (
     <>
-      <DiscoverPage />
+      <DiscoverHero />
+      <DiscoverInfo />
     </>
   )
 }
